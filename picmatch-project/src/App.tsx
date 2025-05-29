@@ -7,11 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App: React.FC = () => {
   // Game images - using simple emoji data URLs that will definitely work
+  // const images = [
+  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF6B6B'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🥾%3C/text%3E%3C/svg%3E",
+  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234ECDC4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🧢%3C/text%3E%3C/svg%3E",
+  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2345B7D1'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E💡%3C/text%3E%3C/svg%3E",
+  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFA07A'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🍱%3C/text%3E%3C/svg%3E",
+  // ];
+
   const images = [
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF6B6B'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🥾%3C/text%3E%3C/svg%3E",
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234ECDC4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🧢%3C/text%3E%3C/svg%3E",
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2345B7D1'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E💡%3C/text%3E%3C/svg%3E",
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFA07A'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🍱%3C/text%3E%3C/svg%3E",
+    "/images/boots.jpeg",
+    "/images/hat.png", 
+    "/images/lamp.jpeg",
+    "/images/lunch.png",
   ];
 
   // Game state
@@ -178,7 +185,57 @@ const App: React.FC = () => {
         )}
       </div>
 
-      
+      {/* CSS Styles */}
+      <style jsx>{`
+        .card-container {
+          aspect-ratio: 1;
+          perspective: 1000px;
+          cursor: pointer;
+        }
+
+        .flip-card {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.6s ease-in-out;
+        }
+
+        .flip-card.flipped {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border: 2px solid #dee2e6;
+        }
+
+        .flip-card-front {
+          /* This side shows by default */
+          transform: rotateY(0deg);
+        }
+
+        .flip-card-back {
+          /* This side is hidden until flipped */
+          transform: rotateY(180deg);
+        }
+
+        .card-container:hover {
+          transform: scale(1.05);
+          transition: transform 0.2s ease;
+        }
+
+        .flip-card-inner {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+        }
+      `}</style>
     </div>
   );
 };
