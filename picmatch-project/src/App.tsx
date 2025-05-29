@@ -185,57 +185,7 @@ const App: React.FC = () => {
         )}
       </div>
 
-      {/* CSS Styles */}
-      <style jsx>{`
-        .card-container {
-          aspect-ratio: 1;
-          perspective: 1000px;
-          cursor: pointer;
-        }
-
-        .flip-card {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-          transition: transform 0.6s ease-in-out;
-        }
-
-        .flip-card.flipped {
-          transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          backface-visibility: hidden;
-          border: 2px solid #dee2e6;
-        }
-
-        .flip-card-front {
-          /* This side shows by default */
-          transform: rotateY(0deg);
-        }
-
-        .flip-card-back {
-          /* This side is hidden until flipped */
-          transform: rotateY(180deg);
-        }
-
-        .card-container:hover {
-          transform: scale(1.05);
-          transition: transform 0.2s ease;
-        }
-
-        .flip-card-inner {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-        }
-      `}</style>
+    
     </div>
   );
 };
