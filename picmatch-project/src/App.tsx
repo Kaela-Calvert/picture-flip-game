@@ -4,21 +4,15 @@ import React, { useEffect, useState } from "react";
 import Card from './components/Card';
 import { CardType } from "./types";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"; // Import the CSS file with flip animations
 
 const App: React.FC = () => {
   // Game images - using simple emoji data URLs that will definitely work
-  // const images = [
-  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF6B6B'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🥾%3C/text%3E%3C/svg%3E",
-  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234ECDC4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🧢%3C/text%3E%3C/svg%3E",
-  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2345B7D1'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E💡%3C/text%3E%3C/svg%3E",
-  //   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFA07A'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🍱%3C/text%3E%3C/svg%3E",
-  // ];
-
   const images = [
-    "/images/boots.jpeg",
-    "/images/hat.png", 
-    "/images/lamp.jpeg",
-    "/images/lunch.png",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FF6B6B'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🥾%3C/text%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234ECDC4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🧢%3C/text%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2345B7D1'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E💡%3C/text%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFA07A'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='40' fill='white'%3E🍱%3C/text%3E%3C/svg%3E",
   ];
 
   // Game state
@@ -184,8 +178,6 @@ const App: React.FC = () => {
           </div>
         )}
       </div>
-
-    
     </div>
   );
 };
